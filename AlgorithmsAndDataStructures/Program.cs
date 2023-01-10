@@ -2,11 +2,8 @@
 
 
 
-using AlgorithmsAndDataStructures.BubbleSort;
+using AlgorithmsAndDataStructures.Recursive;
 
-var bubbleSort = new BubbleSort();
-int[] array = { 3, 13, 1, 5, 0, 7, 8 };
-
-var sortedArray = bubbleSort.Sort(array);
-
-Console.WriteLine(sortedArray);
+var factorial = new RecursiveFactorial();
+var factorialNum = factorial.GetFactorial(5);
+Console.WriteLine(factorialNum.ToString());
