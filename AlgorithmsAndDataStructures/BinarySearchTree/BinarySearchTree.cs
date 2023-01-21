@@ -59,6 +59,49 @@ namespace AlgorithmsAndDataStructures.BinarySearchTree
             
             return node;
         }
+
+        public void PrintInOrderTraversal()
+        {
+            InOrderTraversal(Root);
+        }
+        public void PrintPreOrderTraversal()
+        {
+            PreOrderTraversal(Root);
+        }
+        public void PrintPostOrderTraversal()
+        {
+            PostOrderTraversal(Root);
+        }
+
+        private void PostOrderTraversal(TreeNode node)
+        {
+            if(node != null)
+            {
+                PostOrderTraversal(node.LeftChild);
+                PostOrderTraversal(node.RightChild);
+                Console.WriteLine($"{node.Key} {node.Value}");
+            }
+        }
+
+        private void PreOrderTraversal(TreeNode node)
+        {
+           if(node != null)
+            {
+                Console.WriteLine($"{node.Key} {node.Value}");
+                PreOrderTraversal(node.LeftChild);
+                PreOrderTraversal(node.RightChild);
+            }
+        }
+
+        private void InOrderTraversal(TreeNode node)
+        {
+            if(node != null)
+            {
+                InOrderTraversal(node.LeftChild);
+                Console.WriteLine($"{node.Key} {node.Value}");
+                InOrderTraversal(node.RightChild);
+            }
+        }
     }
 }
 
